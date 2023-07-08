@@ -1,8 +1,6 @@
 {
-    "name": "rust_devcontainer",
-    "dockerComposeFile": "./docker-compose.yml",
-    "service": "rust_devcontainer",
-    "workspaceFolder": "/workspace",
+    "name": "${containerWorkspaceFolder}",
+    "image": "rust:bullseye",
     "customizations": {
         "vscode": {
             "settings": {
@@ -21,5 +19,6 @@
                 "EditorConfig.EditorConfig"
             ]
         }
-    }
+    },
+    "postCreateCommand": "rustup component add clippy rustfmt"
 }
